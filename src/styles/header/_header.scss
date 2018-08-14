@@ -1,0 +1,58 @@
+.navbar {
+  background-color:black;
+  padding: .1rem .5rem !important;
+
+  .bwm-search {
+    height: 50px;
+    width: 300px !important;
+  }
+
+  .navbar-brand {
+    margin-right: 30px;
+    font-size: 27px;
+    letter-spacing: 1px;
+    color: $main-color !important;
+    font-weight: 500;
+  }
+
+  .nav-item {
+    font-size: 14px;
+  }
+
+  .btn-bwm-search {
+    border-color: $main-color;
+    color: $main-color;
+
+    &:hover, &:focus, &:active {
+      background-color: transparent !important;
+      border-color: $main-color !important;
+      color: $main-color !important;
+      box-shadow: none;
+    }
+  }
+
+  .nav-item {
+    color: $link-color!important;
+    font-weight: bold;
+    font-size: 1.2em;
+    font-family: "Titillium Web";
+    margin: 0 1em;
+  }
+  .nav-item:hover{
+    background-color: #fff!important;
+    -webkit-box-shadow: inset 1px -19px 28px -19px rgba(128,128,128,0.45);
+    -moz-box-shadow: inset 1px -19px 28px -19px rgba(128,128,128,0.45);
+    box-shadow: inset 1px -19px 28px -19px rgba(128,128,128,0.45);
+    border-radius: 0.4em;
+    transition: 0.5s;
+  }
+}
+
+nav.bg-light{
+  background-color: white !important;
+}
+
+.navbar-expand-lg .navbar-collapse{
+  justify-content: center;
+}
+

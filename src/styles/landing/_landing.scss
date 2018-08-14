@@ -1,0 +1,41 @@
+#landing-page{
+  .container{
+    max-width: 860px;
+    color: white;
+  }
+  .landing-title{
+    padding: 130px 0 50px 0;
+    h1{
+      font-family: 'Josefin Slab', serif;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #fffcfc4d;
+      background: -webkit-linear-gradient(#eee, #6f6f6fa3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h3{
+      font-family: 'Merienda', cursive;
+      font-size: 1rem;
+    }
+  }
+  .main-col{
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 300px;
+    text-align: center;
+  
+    h2{
+      font-family: 'Anton';
+      font-weight: 400;
+      font-size: 2rem;
+    } 
+    .landing-video{
+      height: 100%;
+    }
+  }
+}
+
