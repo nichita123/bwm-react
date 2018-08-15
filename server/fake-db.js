@@ -14,8 +14,8 @@ class FakeDb {
       shared: true,
       description: "Very nice apartment in center of the city.",
       dailyRate: 43
-      },
-      {
+    },
+    {
       title: "Modern apartment in center",
       city: "New York",
       street: "Time Square",
@@ -25,8 +25,8 @@ class FakeDb {
       shared: false,
       description: "Very nice apartment in center of the city.",
       dailyRate: 11
-      },
-      {
+    },
+    {
       title: "Old house in nature",
       city: "Spisska Nova Ves",
       street: "Banicka 1",
@@ -50,9 +50,14 @@ class FakeDb {
     }];
 
     this.users = [{
-      username: "Test User",
-      email: "test1@gnail.com",
+      username: "Test User1",
+      email: "test1@gmail.com",
       password: "test123"
+    },
+    {
+      username: "Test User2",
+      email: "test2@gmail.com",
+      password: "test1234"
     }]
   }
 
@@ -63,6 +68,7 @@ class FakeDb {
 
   pushDataToDb() {
     const user = new User(this.users[0]);
+    const user2 = new User(this.users[1]);
 
     this.rentals.forEach((rental) => {
       const newRental = new Rental(rental);
@@ -73,6 +79,7 @@ class FakeDb {
     });
 
     user.save();
+    user2.save();
   }
 
   async seedDb() {
