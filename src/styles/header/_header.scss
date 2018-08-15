@@ -2,6 +2,9 @@
   background-color:black;
   padding: .1rem .5rem !important;
 
+  .width-100{
+    width: 100%;
+  }
   .bwm-search {
     height: 50px;
     width: 300px !important;
@@ -13,10 +16,6 @@
     letter-spacing: 1px;
     color: $main-color !important;
     font-weight: 500;
-  }
-
-  .nav-item {
-    font-size: 14px;
   }
 
   .btn-bwm-search {
@@ -32,12 +31,19 @@
   }
 
   .nav-item {
-    color: $link-color!important;
     font-weight: bold;
     font-size: 1.2em;
     font-family: "Titillium Web";
-    margin: 0 1em;
   }
+
+  .nav-link{
+    color: $link-color!important;
+    cursor: pointer;
+  }
+  .margin-l{
+    margin-left: 20px;
+  }
+
   .nav-item:hover{
     background-color: #fff!important;
     -webkit-box-shadow: inset 1px -19px 28px -19px rgba(128,128,128,0.45);
@@ -51,8 +57,3 @@
 nav.bg-light{
   background-color: white !important;
 }
-
-.navbar-expand-lg .navbar-collapse{
-  justify-content: center;
-}
-

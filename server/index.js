@@ -11,7 +11,7 @@ const userRoutes = require('./routes/users');
 mongoose.connect(process.env.DATABASE_URL)
   .then(() => {
     const fakeDb = new FakeDb();
-    fakeDb.seedDb();
+    // fakeDb.seedDb();
   });
 
 const app = express();

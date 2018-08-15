@@ -1,6 +1,7 @@
 import React from 'react';
 import RegisterForm from './RegisterForm';
 import { Redirect } from 'react-router-dom';
+import RegisterImage from '../../../assets/images/register-image.jpg';
 
 import * as actions from 'actions';
 
@@ -42,8 +43,8 @@ export class Register extends React.Component {
               </div>
               <div className='col-md-6 ml-auto'>
                 <div className='image-container'>
-                  <h2 className='catchphrase'>As our member you have access to most awesome places in the world.</h2>
-                  <img src={process.env.PUBLIC_URL + '/img/register-image.jpg'} alt="" />
+                  <h2 className='catchphrase'>See the most awesome places in the Budapest with our company.</h2>
+                  <img src={RegisterImage} alt="Register Image" className="img-fluid img-rounded"/>
                 </div>
               </div>
             </div>

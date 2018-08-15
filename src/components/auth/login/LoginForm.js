@@ -1,10 +1,11 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Input } from 'components/shared/form/Input';
+import { ResError } from '../../shared/form/ResError';
 import { required, minLength4 } from '../../shared/form/validators';
 
 const LoginForm = props => {
-  const { handleSubmit, pristine, submitting, submitCb, valid } = props
+  const { handleSubmit, pristine, submitting, submitCb, valid, errors } = props
   return (
     <form onSubmit={handleSubmit(submitCb)}>
       <Field
@@ -24,8 +25,9 @@ const LoginForm = props => {
         validate={[required, minLength4]}
       />
       <button className='btn btn-bwm btn-form' type="submit" disabled={!valid || pristine || submitting}>
-        Register
+        Login
       </button>
+      <ResError errors={errors} />
     </form>
   )
 }

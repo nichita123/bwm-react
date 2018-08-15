@@ -97,3 +97,10 @@ export const login = (userData) => {
       })
   }
 }
+
+export const logout = () => {
+  authService.invalidateUser();
+  return {
+    type: LOGOUT
+  }
+}

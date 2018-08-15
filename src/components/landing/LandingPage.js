@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { LandingForm } from './LandingForm';
-import { Footer } from '../../shared/Footer';
+import { Footer } from '../shared/Footer';
 
 
 class LandingPage extends Component {
