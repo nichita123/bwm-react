@@ -43,7 +43,7 @@ class Header extends Component {
 
   render() {
     return (
-      <nav className='navbar fixed-top navbar-light bg-light navbar-expand-lg'>
+      <nav className='navbar navbar-light sticky-top bg-light navbar-expand-lg'>
         <Link className='navbar-brand' to='/'><img src={Logo} alt="Logo" /></Link>
         <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNavAltMarkup' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation'>
           <span className='navbar-toggler-icon'></span>
@@ -52,10 +52,10 @@ class Header extends Component {
           <div className="navbar-nav width-100 justify-content-center">
               <div className='nav col-lg-10 col-md-12  d-flex justify-content-center'>
                 <li className="nav-item margin-l">
-                  <Link className='nav-link' to='/rentals'>Appartments</Link>
+                  <Link className='nav-link' to='/rentals'>Apartments</Link>
                 </li>
                 <li className="nav-item  margin-l">
-                  <Link className='nav-link' to='#'>Appartments</Link>
+                  <Link className='nav-link' to='#'>Services</Link>
                 </li>
                 <li className="nav-item  margin-l">
                   <Link className='nav-link' to='#'>Trips</Link>
