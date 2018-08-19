@@ -5,6 +5,13 @@ html {
   min-height: 100%;
 }
 
+.landing-background {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url(./assets/images/background.png);
+  background-position: center center;
+}
 .landing-background_2{
   width: 100%;
   height: 100%;

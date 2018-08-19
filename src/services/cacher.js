@@ -1,3 +1,4 @@
+
 import camelCase from 'camel-case';
 
 let instance = null;

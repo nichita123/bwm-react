@@ -6,13 +6,13 @@ import { connect } from 'react-redux';
 
 class Header extends Component {
 
-  constructor(){
+  constructor() {
     super();
 
     this.handleLogout = this.handleLogout.bind(this);
   }
 
-  handleLogout(){
+  handleLogout() {
     this.props.logout();
     this.props.history.push('/');
   }
@@ -22,7 +22,22 @@ class Header extends Component {
 
     if (isAuth) {
       return (
-        <div className="nav col-lg-2 col-md-12 d-flex justify-content-around">
+        <div className="nav col-lg-4 col-md-12 d-flex justify-content-around">
+          <div className="nav-item dropdown">
+            <a
+              className="nav-link dropdown-toggle"
+              href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Owner Section
+              </a>
+            <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <Link className="dropdown-item" to="/rentals/new">Create Rental</Link>
+              <Link className="dropdown-item" to="/rentals/manage">Manage Rentals</Link>
+              <Link className="dropdown-item" to="/bookings/manage">Manage Bookings</Link>
+            </div>
+          </div>
+          <li className="nav-item">
+            <a className='nav-link'>{this.props.auth.username}</a>
+          </li>
           <li className="nav-item">
             <a className='nav-link' onClick={this.handleLogout}>Logout</a>
           </li>
@@ -30,8 +45,8 @@ class Header extends Component {
       )
     }
     return (
-      <div className="nav col-lg-2 col-md-12 d-flex justify-content-around">
-        <li className="nav-item">
+      <div className="nav col-lg-4 col-md-12 d-flex justify-content-around">
+        <li className="nav-item ml-auto">
           <Link className='nav-link' to='/login'>Login</Link>
         </li>
         <li className="nav-item">
@@ -49,24 +64,24 @@ class Header extends Component {
           <span className='navbar-toggler-icon'></span>
         </button>
         <div className='collapse navbar-collapse justify-content-between' id='navbarNavAltMarkup'>
-          <div className="navbar-nav width-100 justify-content-center">
-              <div className='nav col-lg-10 col-md-12  d-flex justify-content-center'>
-                <li className="nav-item margin-l">
-                  <Link className='nav-link' to='/rentals'>Apartments</Link>
-                </li>
-                <li className="nav-item  margin-l">
-                  <Link className='nav-link' to='#'>Services</Link>
-                </li>
-                <li className="nav-item  margin-l">
-                  <Link className='nav-link' to='#'>Trips</Link>
-                </li>
-                <li className="nav-item  margin-l">
-                  <Link className='nav-link' to='#'>Contact</Link>
-                </li>
-              </div>
-              {this.renderAuthButtons()}
+          <div className="navbar-nav width-100">
+            <div className='nav col-lg-8 col-md-12  d-flex'>
+              <li className="nav-item margin-l">
+                <Link className='nav-link' to='/rentals'>Apartments</Link>
+              </li>
+              <li className="nav-item  margin-l">
+                <Link className='nav-link' to='#'>Services</Link>
+              </li>
+              <li className="nav-item  margin-l">
+                <Link className='nav-link' to='#'>Trips</Link>
+              </li>
+              <li className="nav-item  margin-l">
+                <Link className='nav-link' to='#'>Contact</Link>
+              </li>
             </div>
+            {this.renderAuthButtons()}
           </div>
+        </div>
       </nav>
     )
   }

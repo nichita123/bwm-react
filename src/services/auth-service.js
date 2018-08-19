@@ -1,3 +1,4 @@
+
 import * as jwt from 'jsonwebtoken';
 import * as moment from 'moment';
 
@@ -25,6 +26,10 @@ class AuthService {
     const exp = this.decode(token).exp;
 
     return moment.unix(exp);
+  }
+
+  getUsername() {
+    return this.decode(this.getToken()).username;
   }
 
   isValid(token) {
