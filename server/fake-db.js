@@ -20,6 +20,7 @@ class FakeDb {
   pushDataToDb() {
     const user = new User(this.users[0]);
     const user2 = new User(this.users[1]);
+    const user3 = new User(this.users[2]);
 
     this.rentals.forEach((rental) => {
       const newRental = new Rental(rental);
@@ -31,6 +32,7 @@ class FakeDb {
 
     user.save();
     user2.save();
+    user3.save();
   }
 
   async seedDb() {

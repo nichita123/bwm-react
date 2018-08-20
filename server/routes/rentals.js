@@ -5,12 +5,13 @@ const User = require('../models/user');
 const { normalizeErrors } = require('../helpers/mongoose');
 
 const UserCtrl = require('../controllers/user');
+const AdminCtrl = require('../controllers/user');
 
 router.get('/secret', UserCtrl.authMiddleware, function(req, res) {
   res.json({"secret": true});
 });
 
-router.get('/manage',  UserCtrl.authMiddleware, function(req, res) {
+router.get('/manage',  UserCtrl.authMiddleware, AdminCtrl.adminMiddleware, function(req, res) {
   const user = res.locals.user;
 
   Rental

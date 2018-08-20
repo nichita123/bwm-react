@@ -24,7 +24,11 @@ const userSchema = new Schema({
     required: 'Password is required'
   },
   rentals: [{type: Schema.Types.ObjectId, ref: 'Rental'}],
-  bookings: [{ type: Schema.Types.ObjectId, ref: 'Booking' }]
+  bookings: [{ type: Schema.Types.ObjectId, ref: 'Booking' }],
+  admin: {
+    type: Boolean,
+    default: false
+  }
 });
 
 userSchema.methods.hasSamePassword = function(requestedPassword) {
