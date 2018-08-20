@@ -1,11 +1,19 @@
 @import 'variables.scss';
 @import 'header/header.scss';
-@import 'rental/rental-listing.scss';
-@import 'landing/landing.scss';
-@import 'rental/rental-detail.scss';
 @import 'footer/footer.scss';
-@import 'form/form.scss';
+
+@import 'landing/landing.scss';
+
+@import 'rental/rental-detail.scss';
+@import 'rental/rental-listing.scss';
+@import 'rental/rental-manage.scss';
+
 @import 'booking/booking.scss';
+
+@import 'form/form.scss';
+
+
+
 
 .landing-background{
   position: absolute;
