@@ -99,6 +99,7 @@ function notAuthorized(res) {
 }
 
 exports.adminMiddleware = function (req, res, next) {
+  const user = res.locals.user;
   if (user && user.admin) {
     next();
   }
