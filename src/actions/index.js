@@ -2,17 +2,19 @@ import axios from 'axios';
 import authService from 'services/auth-service';
 import axiosService from 'services/axios-service';
 
-import { FETCH_RENTAL_BY_ID_SUCCESS,
-         FETCH_RENTAL_BY_ID_INIT,
-         FETCH_RENTALS_SUCCESS,
-         FETCH_RENTALS_INIT,
-         FETCH_RENTALS_FAIL,
-         LOGIN_SUCCESS,
-         LOGIN_FAILURE,
-         LOGOUT,
-         FETCH_USER_BOOKINGS_SUCCESS,
-         FETCH_USER_BOOKINGS_FAIL,
-         FETCH_USER_BOOKINGS_INIT } from './types';
+import {
+  FETCH_RENTAL_BY_ID_SUCCESS,
+  FETCH_RENTAL_BY_ID_INIT,
+  FETCH_RENTALS_SUCCESS,
+  FETCH_RENTALS_INIT,
+  FETCH_RENTALS_FAIL,
+  LOGIN_SUCCESS,
+  LOGIN_FAILURE,
+  LOGOUT,
+  FETCH_USER_BOOKINGS_SUCCESS,
+  FETCH_USER_BOOKINGS_FAIL,
+  FETCH_USER_BOOKINGS_INIT
+} from './types';
 
 // RENTALS ATIONS ---------------------------
 
@@ -57,20 +59,20 @@ export const fetchRentals = (city) => {
     dispatch(fetchRentalsInit());
 
     axiosInstance.get('/rentals')
-      .then(res => res.data )
+      .then(res => res.data)
       .then(rentals => dispatch(fetchRentalsSuccess(rentals)))
-      .catch(({response}) => dispatch(fetchRentalsFail(response.data.errors)))
+      .catch(({ response }) => dispatch(fetchRentalsFail(response.data.errors)))
   }
 }
 
 export const fetchRentalById = (rentalId) => {
-  return function(dispatch) {
+  return function (dispatch) {
     dispatch(fetchRentalByIdInit());
 
     axiosInstance.get(`/rentals/${rentalId}`)
-      .then(res => res.data )
+      .then(res => res.data)
       .then(rental => dispatch(fetchRentalByIdSuccess(rental))
-    );
+      );
   }
 }
 
@@ -108,9 +110,9 @@ export const fetchUserBookings = () => {
     dispatch(fetchUserBookingsInit());
 
     axiosInstance.get('/bookings/manage')
-      .then(res => res.data )
+      .then(res => res.data)
       .then(userBookings => dispatch(fetchUserBookingsSuccess(userBookings)))
-      .catch(({response}) => dispatch(fetchUserBookingsFail(response.data.errors)))
+      .catch(({ response }) => dispatch(fetchUserBookingsFail(response.data.errors)))
   }
 }
 
@@ -132,11 +134,11 @@ export const deleteRental = (rentalId) => {
 // AUTH ACTIONS ---------------------------
 
 const loginSuccess = () => {
-  const username = authService.getUsername();
+  const userInfo = authService.getUserInfo();
 
   return {
     type: LOGIN_SUCCESS,
-    username
+    userInfo
   }
 }
 
@@ -170,7 +172,7 @@ export const login = (userData) => {
         authService.saveToken(token);
         dispatch(loginSuccess());
       })
-      .catch(({response}) => {
+      .catch(({ response }) => {
         dispatch(loginFailure(response.data.errors));
       })
   }
@@ -186,7 +188,9 @@ export const logout = () => {
 
 export const createBooking = (booking) => {
   return axiosInstance.post('/bookings', booking)
-      .then(res => res.data)
-      .catch(({response}) => Promise.reject(response.data.errors))
+    .then(res => res.data)
+    .catch(({ response }) => Promise.reject(response.data.errors))
 }
+
+
 

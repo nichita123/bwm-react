@@ -1,4 +1,5 @@
 import React from 'react';
+import axiosService from 'services/axios-service';
 import { Field, reduxForm } from 'redux-form';
 import { Input } from 'components/shared/form/Input';
 import { Select } from 'components/shared/form/Select';
@@ -8,7 +9,11 @@ import { ResError } from 'components/shared/form/ResError';
 // import { required, minLength4 } from 'components/shared/form/validators';
 
 const CreateForm = props => {
-  const { handleSubmit, pristine, submitting, submitCb, valid, options, errors } = props
+  const { handleSubmit, pristine, submitting, submitCb, valid, options, errors } = props;
+  const axiosInstance = axiosService.getInstance();
+
+  
+
   return (
     <form onSubmit={handleSubmit(submitCb)}>
     <Field
@@ -74,7 +79,7 @@ const CreateForm = props => {
         className='form-control'
         component={Input}
       />
-      <button className='btn btn-bwm btn-form' type="submit" disabled={!valid || pristine || submitting}>
+      <button className='btn btn-bwm btn-form' type="submit" disabled={!valid || pristine || submitting} onClick={this.fileUploadHandler}>
         Create Rental
       </button>
       <ResError errors={errors} />

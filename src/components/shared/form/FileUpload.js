@@ -6,13 +6,15 @@ export class FileUpload extends React.Component {
   constructor() {
     super();
 
-    this.onChange = this.onChange.bind(this);
+    this.state = {
+      selectedFile: null
+    }
   }
 
-  onChange(event) {
-    const { input: { onChange } } = this.props;
-
-    onChange('https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/13/image.jpeg');
+  fileSelectedHandler = event => {
+    this.setState({
+      selectedFile: event.target.files[0]
+    })
   }
 
   render() {
@@ -24,7 +26,7 @@ export class FileUpload extends React.Component {
         <div className='input-group'>
           <input type='file'
             accept='.jpg, .png, .jpeg'
-            onChange={this.onChange} />
+            onChange={this.fileSelectedHandler} />
         </div>
         {touched &&
           ((error && <div className='alert alert-danger'>{error}</div>))}

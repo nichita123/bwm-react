@@ -28,8 +28,15 @@ class AuthService {
     return moment.unix(exp);
   }
 
-  getUsername() {
-    return this.decode(this.getToken()).username;
+  getUserInfo() {
+    const decodedToken = this.decode(this.getToken());
+
+    if (decodedToken) {
+      const { username, isAdmin } = decodedToken;
+      return { username, isAdmin }
+    }
+
+    return {};
   }
 
   isValid(token) {

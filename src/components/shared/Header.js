@@ -17,6 +17,19 @@ class Header extends Component {
     this.props.history.push('/');
   }
 
+  renderAdminButtons() {
+    const { isAdmin } = this.props.admin;
+
+    if (isAdmin) {
+      return (
+        <React.Fragment>
+          <Link className="dropdown-item" to="/rentals/new">Create Rental</Link>
+          <Link className="dropdown-item" to="/rentals/manage">Manage Rentals</Link>
+        </React.Fragment>
+      )
+    }
+  }
+
   renderAuthButtons() {
     const { isAuth } = this.props.auth;
 
@@ -30,8 +43,7 @@ class Header extends Component {
               Owner Section
               </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <Link className="dropdown-item" to="/rentals/new">Create Rental</Link>
-              <Link className="dropdown-item" to="/rentals/manage">Manage Rentals</Link>
+            {this.renderAdminButtons()}
               <Link className="dropdown-item" to="/bookings/manage">Manage Bookings</Link>
             </div>
           </div>
@@ -89,7 +101,8 @@ class Header extends Component {
 
 function mapStateToProps(state) {
   return {
-    auth: state.auth
+    auth: state.auth,
+    admin: state.admin
   }
 }
 

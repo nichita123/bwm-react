@@ -12,6 +12,7 @@ export const init = () => {
     rental: selectedRentalReducer,
     form: formReducer,
     auth: authReducer,
+    admin: authReducer,
     userBookings: userBookingsReducer
   });
 

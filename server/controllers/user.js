@@ -21,7 +21,8 @@ exports.auth = function (req, res) {
     if (user.hasSamePassword(password)) {
       const token = jwt.sign({
         userId: user.id,
-        username: user.username
+        username: user.username,
+        isAdmin: user.isAdmin
       }, process.env.SECRET, { expiresIn: '1h' });
 
       return res.json(token);
@@ -100,13 +101,16 @@ function notAuthorized(res) {
 
 exports.adminMiddleware = function (req, res, next) {
   const user = res.locals.user;
-  if (user && user.admin) {
+
+  if (user && user.isAdmin) {
+
     next();
   }
   else {
     return notAdmin(res);
   }
 }
+
 
 function notAdmin(res) {
   return res.status(403).send({ errors: [{ title: 'Not Admin', detail: 'You are not admin!' }] });

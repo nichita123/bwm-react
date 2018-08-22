@@ -100,7 +100,7 @@
       "username": "Yusif",
       "email": "Yusif@gmail.com",
       "password": "yusif123",
-      "admin": true
+      "isAdmin": true
     }
   ]
 }
