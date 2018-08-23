@@ -9,6 +9,8 @@ export class FileUpload extends React.Component {
     this.state = {
       selectedFile: null
     }
+
+    this.fileSelectedHandler = this.fileSelectedHandler.bind(this);
   }
 
   fileSelectedHandler = event => {
