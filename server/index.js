@@ -7,7 +7,8 @@ require('dotenv').config();
 
 const rentalRoutes = require('./routes/rentals'),
       userRoutes = require('./routes/users'),
-      bookingRoutes = require('./routes/bookings');
+      bookingRoutes = require('./routes/bookings'),
+      imageUploadRoutes = require('./routes/image-upload');
 
 mongoose.connect(process.env.DATABASE_URL).then(() => {
   const fakeDb = new FakeDb();
@@ -21,6 +22,7 @@ app.use(bodyParser.json());
 app.use('/api/rentals', rentalRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/bookings', bookingRoutes);
+app.use('/api/', imageUploadRoutes);
 
 const PORT = process.env.PORT || 3001;
 
