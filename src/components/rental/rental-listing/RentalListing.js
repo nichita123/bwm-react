@@ -20,7 +20,7 @@ class RentalListing extends React.Component {
         <div className="landing-background_2"></div>
         <div className="main">
           <div className="row">
-            <ListingHeader />
+            {/* <ListingHeader /> */}
             <RentalList rentals={this.props.rentals} />
             <GeneralMap />
           </div>

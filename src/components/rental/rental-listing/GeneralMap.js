@@ -12,7 +12,7 @@ export class GeneralMap extends Component {
         <MapWithGeocode
           googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXufe52FObBfoT3bMTG7iP4Ye8laj7wZQ&v=3.exp&libraries=geometry,drawing,places"
           loadingElement={<div style={{ height: `100%`, marginLeft: `10px` }} />}
-          containerElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `90%` }} />}
           mapElement={<div style={{ height: `100%` }} />}
           location={location}
           style={style}

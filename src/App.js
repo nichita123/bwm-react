@@ -22,6 +22,7 @@ import { LoggedInRoute } from './components/shared/auth/LoggedInRoute';
 import * as actions from 'actions';
 
 import 'App.css';
+import Services from './components/services/Services';
 
 const store = require('./reducers').init();
 
@@ -68,6 +69,12 @@ class App extends Component {
                 exact
                 path='/rentals/:street/aps'
                 component={RentalSearchListing}
+              />
+
+              <ProtectedRoute
+                exact
+                path='/rentals/:id/services'
+                component={Services}
               />
 
               <ProtectedRoute
