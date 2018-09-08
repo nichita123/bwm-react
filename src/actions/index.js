@@ -186,10 +186,22 @@ export const logout = () => {
   }
 }
 
-export const createBooking = (booking) => {
+export const createBooking = booking => {
   return axiosInstance.post('/bookings', booking)
     .then(res => res.data)
     .catch(({ response }) => Promise.reject(response.data.errors))
+}
+
+export const uploadImage = image => {
+  const formData = new FormData();
+
+  formData.append('image', image);
+
+  return axiosInstance.post('/image-upload', formData)
+    .then(json => {
+      return json.data.imageUrl;
+    })
+    .catch(({response}) => Promise.reject(response.data.errors[0]))
 }
 
 

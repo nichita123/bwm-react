@@ -1,56 +1,155 @@
-import React from 'react';
-import axios from 'axios';
-import axiosService from 'services/axios-service';
+import React from "react";
+import * as actions from "actions";
 
 export class FileUpload extends React.Component {
-
   constructor() {
     super();
 
+    this.setupReader();
+
     this.state = {
-      selectedFile: null
+      selectedFile: undefined,
+      imageBase64: "",
+      pending: false,
+      status: 'INIT'
+    };
+
+    this.onChange = this.onChange.bind(this);
+    this.uploadImage = this.uploadImage.bind(this);
+  }
+
+  setupReader() {
+    this.reader = new FileReader();
+
+    this.reader.addEventListener("load", event => {
+      debugger;
+      this.setState({
+        imageBase64: event.target.result
+      });
+    });
+  }
+
+  onChange(event) {
+    const selectedFile = event.target.files[0];
+
+    if (selectedFile) {
+      this.setState({
+        selectedFile
+      });
+
+      this.reader.readAsDataURL(selectedFile);
     }
   }
 
-  fileSelectedHandler = event => {
-    this.setState({
-      image: event.target.files[0]
-    })
+  onError(error) {
+    this.setState({pending: false, status: 'FAIL'})
   }
 
-  uploadFile = () => {
-    const formData = new FormData();
-    const axiosInstance = axiosService.getInstance();
+  onSuccess(uploadedImage) {
+    const {
+      input: { onChange }
+    } = this.props;
 
-    formData.append('image', this.state.image[0]);
+    this.setState({pending: false, status: 'OK'})
 
-    axiosInstance.post('/image-upload', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    })
-      .then(json => json.imageUrl)
-      .catch(err => {
+    onChange(uploadedImage);
+  }
 
-      })
+  uploadImage() {
+    const { selectedFile } = this.state;
+
+    if (selectedFile) {
+
+      this.setState({pending: true, status: 'INIT'})
+
+      actions.uploadImage(selectedFile).then(
+        uploadedImage => {
+          this.onSuccess(uploadedImage);
+        },
+        error => {
+          this.onError(error);
+        }
+      );
+    }
+  }
+
+  renderSpinningCircle(){
+    const { pending } = this.state;
+
+    if(pending){
+      return (
+        <div className="img-loading-overlay">
+          <div className="img-spinning-circle">
+
+          </div>
+        </div>
+      )
+    }
+  }
+
+  renderImageStatus(){
+    const {status} = this.state; 
+
+    if(status === 'OK'){
+      return (
+        <div className="alert alert-success">
+          Image Uploaded Successfully!
+        </div>
+      )
+    }
+    if(status === 'FAIL'){
+      return (
+        <div className="alert alert-danger">
+          Image Upload Failed...
+        </div>
+      )
+    }
   }
 
   render() {
-    const { label, meta: { touched, error } } = this.props;
+    const {
+      label,
+      meta: { touched, error }
+    } = this.props;
+    const { selectedFile, imageBase64 } = this.state;
 
     return (
-      <div className='form-group'>
-        <label>{label}</label>
-        <div className='input-group'>
-          <input type='file'
-            accept='.jpg, .png, .jpeg'
-            onChange={this.fileSelectedHandler}
+      <div className="img-upload-container">
+        <label className="img-upload btn btn-bwm">
+          <span className="upload-text">Select rental image</span>
+          <input
+            type="file"
+            accept=".jpg, .png, .jpeg"
+            onChange={this.onChange}
           />
-          <button onClick={this.uploadFile}>Upload Image</button>
-        </div>
+        </label>
+
+        {selectedFile && (
+          <button
+            className="btn btn-success btn-upload"
+            type="button"
+            disabled={!selectedFile}
+            onClick={this.uploadImage}
+          >
+            Upload Image
+          </button>
+        )}
+
         {touched &&
-          ((error && <div className='alert alert-danger'>{error}</div>))}
+          (error && <div className="alert alert-danger">{error}</div>)}
+
+        {imageBase64 && (
+          <div className="img-preview-container">
+            <div
+              className="image-preview"
+              style={{ backgroundImage: `url('${imageBase64}')` }}
+            />
+            {this.renderSpinningCircle()}
+          </div>
+        )}
+
+        {this.renderImageStatus()}
       </div>
-    )
+    );
   }
 }
