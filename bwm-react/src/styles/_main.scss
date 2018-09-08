@@ -1,0 +1,63 @@
+@import 'variables.scss';
+@import 'header/header.scss';
+@import 'footer/footer.scss';
+
+@import 'landing/landing.scss';
+
+@import 'rental/rental-detail.scss';
+@import 'rental/rental-listing.scss';
+@import 'rental/rental-manage.scss';
+@import 'rental/rental-card.scss';
+
+@import 'booking/booking.scss';
+
+@import 'editable/editable-component';
+
+@import 'form/form.scss';
+
+
+
+
+.landing-background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1;
+}
+.landing-background_2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1;
+}
+
+.apartment {
+  color: #a72da3;
+}
+
+.house {
+  color: #bf1818;
+}
+
+.condo {
+  color: #d68000;
+}
+
+.btn-bwm{
+  background-color: #1dc785;
+  border-color: #1dc785;
+  color: white;
+  padding: 15px 30px;
+  font-size: 20px;
+
+  &:hover, &:focus, &:active{
+    border-color: #1dc785 !important;
+    background-color: #1dc785 !important;
+  }
+}

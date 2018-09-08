@@ -1,0 +1,143 @@
+{
+  "rentals": [
+    {
+      "title": "Nice view on ocean",
+      "city": "San Francisco",
+      "street": "Main street",
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+      "bedrooms": 4,
+      "bathrooms": 2,
+      "bed": 2,
+      "entire": true,
+      "description": "Very nice apartment in center of the city.",
+      "dailyRate": 43,
+      "guests": 8
+    },
+    {
+      "title": "Modern apartment in center",
+      "city": "New York",
+      "street": "Time Square",
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+      "bedrooms": 1,
+      "bathrooms": 2,
+      "bed": 2,
+      "entire": true,
+      "description": "Very nice apartment in center of the city.",
+      "dailyRate": 11,
+      "guests": 6
+    },
+    {
+      "title": "Old house in nature",
+      "city": "Spisska Nova Ves",
+      "street": "Banicka 1",
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+      "bedrooms": 5,
+      "bathrooms": 2,
+      "bed": 2,
+      "entire": true,
+      "description": "Very nice apartment in center of the city.",
+      "dailyRate": 23,
+      "guests": 4
+    },
+    {
+      "title": "Amazing modern place",
+      "city": "San Francisco",
+      "street": "Green street",
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "bed": 2,
+      "entire": true,
+      "description": "Hiking routes 10 min walking away",
+      "dailyRate": 140,
+      "guests": 6
+    },
+    {
+      "title": "Apartment In China Town",
+      "city": "San Francisco",
+      "street": "Union Street",
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "bed": 2,
+      "entire": true,
+      "description": "Very nice apartment in China Town",
+      "dailyRate": 89,
+      "guests": 5
+    },
+    {
+      "title": "House with Garden",
+      "city": "New York",
+      "street": "Long Island, Queens",
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+      "bedrooms": 6,
+      "bathrooms": 2,
+      "bed": 2,
+      "entire": true,
+      "description": "Very nice house in Long Island with garden",
+      "dailyRate": 189,
+      "guests": 10
+    },
+    {
+      "title": "Cozy modern Condo",
+      "city": "New York",
+      "street": "Penn Station",
+      "image": "https://booksync-jerga-prod.s3.amazonaws.com/uploads/rental/image/5/image.jpeg",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "bed": 2,
+      "entire": true,
+      "description": "Building close to Penn Station",
+      "dailyRate": 68,
+      "guests": 6
+    }
+  ],
+  "users": [
+    {
+      "username": "Yusif",
+      "email": "Yusif@gmail.com",
+      "password": "yusif123",
+      "isAdmin": true
+    },
+    {
+      "username": "Test User",
+      "email": "test@gmail.com",
+      "password": "testtest"
+    },
+    {
+      "username": "Test User1",
+      "email": "test1@gmail.com",
+      "password": "testtest1"
+    }
+  ],
+  "services": [
+    {
+      "title": "friend's parking",
+      "info_1": "Safe, underground garage",
+      "info_2": "Remote control garage",
+      "info_3": "24 hour CCTV monitoring",
+      "pricePerNight": 15
+    },
+    {
+      "title": "airport transfer",
+      "info_1": "Comfortable transport up to 16 guests",
+      "info_2": "English speaking professional driver",
+      "info_3": "Faster, safer and till the apartment",
+      "pricePerNight": 15
+    },
+    {
+      "title": "friend's parking",
+      "info_1": "Safe, underground garage",
+      "info_2": "Remote control garage",
+      "info_3": "24 hour CCTV monitoring",
+      "pricePerNight": 15
+    },
+    {
+      "title": "friend's parking",
+      "info_1": "Safe, underground garage",
+      "info_2": "Remote control garage",
+      "info_3": "24 hour CCTV monitoring",
+      "pricePerNight": 15
+    }
+  ]
+}

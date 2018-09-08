@@ -1,0 +1,66 @@
+#landing-page{
+  .container{
+    max-width: 900px;
+    color: white;
+  }
+  .no-padding{
+    padding: 0 !important;
+  }
+  .landing-title{
+    padding: 80px 0 60px 0;
+    h1{
+      font-family: 'Josefin Slab', serif;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #fffcfc4d;
+      background: -webkit-linear-gradient(#eee, #6f6f6fa3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h3{
+      font-family: 'Merienda', cursive;
+      font-size: 1rem;
+    }
+  }
+  .main-col{
+    h2{
+      font-family: 'Anton';
+      font-weight: 400;
+      font-size: 2rem;
+      text-align: center;
+    } 
+  }
+  .form-holder{
+    .choose-btn{
+      width: 150px;
+      height: 47px;
+      background-color: #fff !important;
+      margin-top: 5px !important;
+      &:nth-last-child(2){
+        margin-bottom: 35px !important;
+      }
+      font-weight: 600;
+      font-size: 20px;
+      border: none;
+      border-radius: 7px;
+      color: $link-color;
+      &:hover{
+        color: $link-color;
+      }
+    }
+
+    .search-btn{
+      width: 150px;
+      height: 47px;
+      border-radius: 30px;
+      background: linear-gradient(to bottom, #ff6a59 0%,#fb2d2d 43%,#fb2d2d 44%,#fb2d2d 50%,#fb2d2d 50%,#fb2d2d 50%,#fb2d2d 50%,#fb2d2d 78%) !important;
+      border: none;
+      color: #fff;
+      font-size: 20px;
+    }
+  }
+  .align-center{
+    align-self: center;
+  }
+}
