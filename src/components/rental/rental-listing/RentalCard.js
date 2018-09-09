@@ -56,7 +56,6 @@ export function RentalCard(props) {
     </div>
   )
 }
-
 // {/* <div className='card bwm-card'>
 //   <img className='card-img-top' src={rental.image} alt={rental.title}></img>
 //   <div className='card-block'>

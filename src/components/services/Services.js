@@ -20,9 +20,7 @@ class Services extends Component {
                       <span>3. CONFIRM AND PAY</span>
                     </div>
                   </div>
-                  
-                  
-                  
+
                 </div>
               </div>
 
