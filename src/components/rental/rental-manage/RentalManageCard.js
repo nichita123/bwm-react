@@ -11,6 +11,7 @@ export class RentalManageCard extends Component {
     return (
       <div className='col-md-4'>
         <div className='card text-center'>
+        <img class="card-img-top" src={rental.image} alt="Card image cap" />
           <div className='card-block'>
             <h4 className='card-title'>{rental.title} - {toUpperCase(rental.city)}</h4>
             <Link className='btn btn-bwm' to={`/rentals/${rental._id}`}>Go to Rental</Link>

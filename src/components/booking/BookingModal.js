@@ -8,6 +8,7 @@ export function BookingModal(props) {
   return (
     <Modal
       open={open}
+      center
       onClose={closeModal}
       little classNames={{ modal: 'booking-modal' }}
     >

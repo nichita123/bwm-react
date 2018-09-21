@@ -88,7 +88,7 @@ class Header extends Component {
                 <Link className='nav-link' to='#'>Trips</Link>
               </li>
               <li className="nav-item  margin-l">
-                <Link className='nav-link' to='#'>Contact</Link>
+                <Link className='nav-link' to='/contact'>Contact</Link>
               </li>
             </div>
             {this.renderAuthButtons()}

@@ -45,7 +45,6 @@ export class Booking extends Component {
       bookings.forEach(booking => {
         const dateRange = getRangeOfDates(booking.startAt, booking.endAt, 'Y/MM/DD');
         this.bookedOutDates.push(...dateRange);
-
       });
     }
   }

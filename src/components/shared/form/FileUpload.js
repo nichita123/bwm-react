@@ -42,7 +42,7 @@ export class FileUpload extends React.Component {
   }
 
   onError(error) {
-    this.setState({pending: false, status: 'FAIL'})
+    this.setState({ pending: false, status: 'FAIL'})
   }
 
   onSuccess(uploadedImage) {

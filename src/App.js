@@ -23,6 +23,7 @@ import * as actions from 'actions';
 
 import 'App.css';
 import Services from './components/services/Services';
+import Contact from './components/contact/Contact';
 
 const store = require('./reducers').init();
 
@@ -50,6 +51,13 @@ class App extends Component {
                 path='/rentals'
                 component={RentalListing}
               />
+
+              <ProtectedRoute
+                exact
+                path='/contact'
+                component={Contact}
+              />
+              
               <ProtectedRoute
                 exact
                 path='/rentals/new'

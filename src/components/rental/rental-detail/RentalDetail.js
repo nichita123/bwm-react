@@ -39,6 +39,7 @@ class RentalDetail extends React.Component {
                   <RentalDetailInfo rental={rental} />
                 </div>
                 <div className='col-md-4'>
+                
                   <Booking rental={rental} />
                 </div>
               </div>
