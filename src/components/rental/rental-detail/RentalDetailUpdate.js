@@ -1,17 +1,41 @@
 import React, { Component } from "react";
 import { RentalAssets } from "./RentalAssets";
 import { toUpperCase, rentalType } from "helpers";
+import EditableInput from "../../shared/editable/EditableInput";
+
+import * as actions from 'actions';
 
 export class RentalDetailUpdate extends Component {
+
+  constructor(){
+    super();
+
+    this.updateRental = this.updateRental.bind(this);
+  }
+
+  updateRental(rentalData){
+    const {rental: {_id}, dispatch} = this.props;
+
+    this.props.dispatch(actions.updateRental(_id, rentalData));
+  }
+
   render() {
-    const rental = props.rental;
+    const rental = this.props.rental;
 
     return (
       <div className="rental">
+        <h1>Update Component</h1>
         <h2 className={`rental-type ${rental.category}`}>
           {rentalType(rental.shared)} {rental.category}
         </h2>
-        <h1 className="rental-title">{rental.title}</h1>
+
+        <EditableInput
+          entity={rental}
+          entityField={"title"}
+          className={"rental-title"}
+          updateEntity={this.updateRental}
+        />
+
         <h2 className="rental-city">{toUpperCase(rental.city)}</h2>
         <div className="rental-room-info">
           <span>

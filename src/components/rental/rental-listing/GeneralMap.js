@@ -12,7 +12,8 @@ export class GeneralMap extends Component {
     };
     return (
       <Col lg="6" md="12" className="sticky-top on-small-screen" style={{
-        maxHeight: '90vh'
+        maxHeight: '80vh',
+        minHeight: '80vh'
       }}>
         <MapWithGeocode
           googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXufe52FObBfoT3bMTG7iP4Ye8laj7wZQ&v=3.exp&libraries=geometry,drawing,places"

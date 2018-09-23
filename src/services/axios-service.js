@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import authService from './auth-service';
 
@@ -13,7 +12,7 @@ class AxiosService {
   initInstance() {
     this.axiosInstance = axios.create({
       baseURL: '/api',
-      timeout: 5000
+      timeout: 1000
     });
 
     this.axiosInstance.interceptors.request.use(

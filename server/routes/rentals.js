@@ -19,10 +19,10 @@ router.get(
     const user = res.locals.user;
 
     Rental.where({ user })
-    .populate({
-      path: 'bookings',
-      populate: { path: 'user' }
-    })
+      .populate({
+        path: "bookings",
+        populate: { path: "user" }
+      })
       .exec(function(err, foundRentals) {
         if (err) {
           return res.status(422).send({ errors: normalizeErrors(err.errors) });
@@ -67,6 +67,14 @@ router.delete(
       .exec(function(err, foundRental) {
         if (err) {
           return res.status(422).send({ errors: normalizeErrors(err.errors) });
+        }
+
+        if (user.id !== foundRental.user.id) {
+          return res.status(422).send({
+            errors: [
+              { title: "Invalid User!", detail: "You are not rental owner!" }
+            ]
+          });
         }
 
         if (foundRental.bookings.length > 0) {
@@ -151,7 +159,7 @@ router.post("/", UserCtrl.authMiddleware, AdminCtrl.adminMiddleware, function(
     description,
     dailyRate
   });
-  
+
   rental.user = user;
 
   Rental.create(rental, function(err, newRental) {

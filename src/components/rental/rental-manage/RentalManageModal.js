@@ -24,7 +24,7 @@ export class RentalManageModal extends React.Component {
 
   renderBookings(bookings) {
     return bookings.map((booking, index) => (
-      <React.Fragment>
+      <React.Fragment key={index}>
         <p>
           <span>Name: </span> {booking.user.username}
         </p>
