@@ -5,7 +5,7 @@ import  EmailForm  from "./EmailForm";
 class Contact extends Component {
   render() {
     return (
-      <div id="contact">
+      <section id="contact">
         <div className="landing-background_2" />
 
         <div className="container">
@@ -34,7 +34,7 @@ class Contact extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     );
   }
 }

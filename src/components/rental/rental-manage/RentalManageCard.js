@@ -9,7 +9,7 @@ export class RentalManageCard extends Component {
     const { rental, modal } = this.props;
 
     return (
-      <div className='col-md-4'>
+      <div className='col-md-4 col-sm-6'>
         <div className='card text-center'>
         <img class="card-img-top" src={rental.image} alt="Card image cap" />
           <div className='card-block'>

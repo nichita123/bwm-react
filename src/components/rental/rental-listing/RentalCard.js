@@ -1,60 +1,46 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { rentalType } from 'helpers';
+import React from "react";
+import { Link } from "react-router-dom";
+import { rentalType } from "helpers";
+
+import { Container, Row, Col } from "reactstrap";
 
 export function RentalCard(props) {
   const rental = props.rental;
 
   return (
-    <div className="col-12 card-row">
-      <Link className='rental-detail-link' to={`/rentals/${rental._id}`}>
-        <div className="row">
+    <Link className="rental-detail-link" to={`/rentals/${rental._id}`}>
+      <Row className="rental-card sm-center">
           <div className="col-md-4">
             <img className="img-fluid" src={rental.image} alt={rental.title} />
           </div>
           <div className="col-md-6 pad-15">
-            <h6 className={rental.category}>{rentalType(rental.shared)} Apartment</h6>
+            <h6 className={rental.category}>
+              {rentalType(rental.shared)} Apartment
+            </h6>
             <h4>{rental.title}</h4>
 
             <div className="row">
               <div className="col-6">
-                <p>
-                  Guests: {rental.guests}
-                </p>
-                <p>
-                  Bedrooms: {rental.bedrooms}
-                </p>
-                <p>
-                  Bathrooms: {rental.bathrooms}
-                </p>
-                <p>
-                  Bed: {rental.bed}
-                </p>
+                <p>Guests: {rental.guests}</p>
+                <p>Bedrooms: {rental.bedrooms}</p>
+                <p>Bathrooms: {rental.bathrooms}</p>
+                <p>Bed: {rental.bed}</p>
               </div>
               <div className="col-6">
-                <p>
-                  Bed linen and towels
-                </p>
-                <p>
-                  Equiped Kitchen
-                </p>
-                <p>
-                  Wifi &amp; TV
-                </p>
+                <p>Bed linen and towels</p>
+                <p>Equiped Kitchen</p>
+                <p>Wifi &amp; TV</p>
               </div>
             </div>
           </div>
           <div className="col-md-2 d-flex justify-content-center align-items-center">
             <div className="price-box">
-              <p>
-                {rental.dailyRate} &euro;
-             </p>
+              <p>{rental.dailyRate} &euro;</p>
             </div>
           </div>
-        </div>
-      </Link>
-    </div>
-  )
+      </Row>
+    </Link>
+  );
 }
 // {/* <div className='card bwm-card'>
 //   <img className='card-img-top' src={rental.image} alt={rental.title}></img>

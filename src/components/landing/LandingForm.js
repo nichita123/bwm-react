@@ -58,7 +58,6 @@ export class LandingForm extends Component {
               Tue 3 July
             </button>
           </DateRangePicker>
-          <button className='btn btn-outline-success my-2 my-sm-0 btn-bwm-search choose-btn'>Sat 7 July</button>
           <button className='btn btn-outline-success my-2 my-sm-0 btn-bwm-search choose-btn'>Guests</button>
           <button className='btn btn-outline-success my-2 my-sm-0 btn-bwm-search search-btn' type='submit'>Search</button>
         </form>

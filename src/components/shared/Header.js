@@ -4,6 +4,19 @@ import Logo from '../../assets/images/Logo.png';
 import { PromiseProvider } from 'mongoose';
 import { connect } from 'react-redux';
 
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem } from 'reactstrap';
+
 class Header extends Component {
 
   constructor() {
@@ -70,7 +83,7 @@ class Header extends Component {
 
   render() {
     return (
-      <nav className='navbar navbar-light sticky-top bg-light navbar-expand-lg'>
+      <nav className='navbar navbar-light fixed-top bg-light navbar-expand-lg'>
         <Link className='navbar-brand' to='/'><img src={Logo} alt="Logo" /></Link>
         <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNavAltMarkup' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation'>
           <span className='navbar-toggler-icon'></span>

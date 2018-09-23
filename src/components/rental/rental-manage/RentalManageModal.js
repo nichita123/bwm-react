@@ -26,6 +26,12 @@ export class RentalManageModal extends React.Component {
     return bookings.map((booking, index) => (
       <React.Fragment>
         <p>
+          <span>Name: </span> {booking.user.username}
+        </p>
+        <p>
+          <span>Email: </span> {booking.user.email}
+        </p>
+        <p>
           <span>Date:</span> {pretifyDate(booking.startAt)} -{" "}
           {pretifyDate(booking.endAt)}
         </p>

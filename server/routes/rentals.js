@@ -19,7 +19,10 @@ router.get(
     const user = res.locals.user;
 
     Rental.where({ user })
-      .populate("bookings")
+    .populate({
+      path: 'bookings',
+      populate: { path: 'user' }
+    })
       .exec(function(err, foundRentals) {
         if (err) {
           return res.status(422).send({ errors: normalizeErrors(err.errors) });
