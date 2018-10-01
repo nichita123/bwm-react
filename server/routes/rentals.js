@@ -139,10 +139,11 @@ router.post("/", UserCtrl.authMiddleware, AdminCtrl.adminMiddleware, function(
     title,
     city,
     street,
-    category,
     image,
-    shared,
     bedrooms,
+    bathroooms,
+    bed,
+    entire,
     description,
     dailyRate
   } = req.body;
@@ -152,10 +153,11 @@ router.post("/", UserCtrl.authMiddleware, AdminCtrl.adminMiddleware, function(
     title,
     city,
     street,
-    category,
     image,
-    shared,
     bedrooms,
+    bathroooms,
+    bed,
+    entire,
     description,
     dailyRate
   });

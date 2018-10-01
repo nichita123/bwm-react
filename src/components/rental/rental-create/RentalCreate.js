@@ -15,7 +15,8 @@ export class RentalCreate extends React.Component {
       redirect: false
     }
 
-    this.rentalCateogies = ['apartment', 'house', 'condo'];
+    this.rentalCateogies = ['apartment'];
+    //, 'house', 'condo'
 
     this.createRental = this.createRental.bind(this);
   }

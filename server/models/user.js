@@ -17,6 +17,10 @@ const userSchema = new Schema({
     required: 'Email is required',
     match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/]
   },
+  phone:{
+    type: String,
+    required: 'Phone Number is required'
+  },
   password: {
     type: String,
     min: [4, 'Too short, min is 4 characters'],

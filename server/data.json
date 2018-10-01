@@ -21,7 +21,7 @@
       "bedrooms": 1,
       "bathrooms": 2,
       "bed": 2,
-      "entire": true,
+      "entire": false,
       "description": "Very nice apartment in center of the city.",
       "dailyRate": 11,
       "guests": 6
@@ -47,7 +47,7 @@
       "bedrooms": 2,
       "bathrooms": 2,
       "bed": 2,
-      "entire": true,
+      "entire": false,
       "description": "Hiking routes 10 min walking away",
       "dailyRate": 140,
       "guests": 6
@@ -73,7 +73,7 @@
       "bedrooms": 6,
       "bathrooms": 2,
       "bed": 2,
-      "entire": true,
+      "entire": false,
       "description": "Very nice house in Long Island with garden",
       "dailyRate": 189,
       "guests": 10
@@ -97,16 +97,19 @@
       "username": "Yusif",
       "email": "Yusif@gmail.com",
       "password": "yusif123",
+      "phone": "+37368599383",
       "isAdmin": true
     },
     {
       "username": "Test User",
       "email": "test@gmail.com",
+      "phone": "+37369234564",
       "password": "testtest"
     },
     {
       "username": "Test User1",
       "email": "test1@gmail.com",
+      "phone": "+37368554656",
       "password": "testtest1"
     }
   ],

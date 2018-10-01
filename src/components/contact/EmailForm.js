@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axiosService from "../../services/axios-service";
-import ReactPhoneInput from "react-phone-input-2";
+import { PhoneInput } from "./../shared/form/PhoneInput";
 
 class EmailForm extends Component {
   constructor() {
@@ -18,21 +18,20 @@ class EmailForm extends Component {
     this.onPhoneChange = this.onPhoneChange.bind(this);
   }
 
+  onPhoneChange = phone => {
+    this.setState({ phone });
+  };
+
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
     });
   };
 
-  onPhoneChange = phone => {
-    this.setState({ phone });
-  };
-
   handleSubmit(e) {
     e.preventDefault();
 
     const axiosInstance = axiosService.getInstance();
-
     const { name, email, message, phone } = this.state;
 
     const form = axiosInstance.post("/contact-form", {
@@ -68,16 +67,12 @@ class EmailForm extends Component {
             onChange={this.handleChange}
           />
         </div>
-        <ReactPhoneInput
-          defaultCountry="hu"
-          inputExtraProps={{
-            name: "phone",
-            required: true,
-            autoFocus: true
-          }}
+
+        <PhoneInput
           value={this.state.phone}
-          onChange={this.onPhoneChange}
+          onPhoneChange={this.onPhoneChange}
         />
+
         <div className="form-group">
           <label htmlFor="message">Message</label>
           <textarea

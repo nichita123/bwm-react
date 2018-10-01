@@ -1,19 +1,20 @@
 import React, { Component } from "react";
-import EditableComponent from './EditableComponent';
+import EditableComponent from "./EditableComponent";
 
-class EditableInput extends EditableComponent {
-
+class EditableTextArea extends EditableComponent {
   renderComponentView() {
     const { value, isActive } = this.state;
-    const { className } = this.props;
+    const { className, rows, cols } = this.props;
 
     if (isActive) {
       return (
         <React.Fragment>
-          <input
+          <textarea
             onChange={this.handleChange}
             value={value}
-            className={className + ' form-control'}
+            className={className + " form-control"}
+            rows={rows}
+            cols={cols}
           />
           <button
             onClick={this.saveEdit}
@@ -56,4 +57,4 @@ class EditableInput extends EditableComponent {
   }
 }
 
-export default EditableInput;
+export default EditableTextArea;

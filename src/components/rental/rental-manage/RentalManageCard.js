@@ -84,7 +84,14 @@ export class RentalManageCard extends Component {
             {wantDelete && (
               <div className="delete-menu">
                 Do you confirm?
-                <button onClick={this.deleteRental} className="btn btn-danger">
+                <button
+                  onClick={this.deleteRental.bind(
+                    this,
+                    rental._id,
+                    rentalIndex
+                  )}
+                  className="btn btn-danger"
+                >
                   Yes
                 </button>
                 <button

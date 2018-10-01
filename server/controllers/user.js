@@ -33,7 +33,7 @@ exports.auth = function (req, res) {
 }
 
 exports.register = function (req, res) {
-  const { username, email, password, passwordConfirmation } = req.body;
+  const { username, email, phone, password, passwordConfirmation } = req.body;
 
   if (!password || !email) {
     return res.status(422).send({ errors: [{ title: 'Data missing!', detail: 'Provide email and password!' }] });
@@ -55,6 +55,7 @@ exports.register = function (req, res) {
     const user = new User({
       username,
       email,
+      phone,
       password
     });
 

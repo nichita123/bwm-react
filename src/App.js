@@ -48,14 +48,20 @@ class App extends Component {
 
               <ProtectedRoute
                 exact
-                path='/rentals'
-                component={RentalListing}
+                path='/services'
+                component={Services}
               />
 
               <ProtectedRoute
                 exact
                 path='/contact'
                 component={Contact}
+              />
+
+              <ProtectedRoute
+                exact
+                path='/rentals'
+                component={RentalListing}
               />
               
               <ProtectedRoute
@@ -77,12 +83,6 @@ class App extends Component {
                 exact
                 path='/rentals/:street/aps'
                 component={RentalSearchListing}
-              />
-
-              <ProtectedRoute
-                exact
-                path='/rentals/:id/services'
-                component={Services}
               />
 
               <ProtectedRoute
